@@ -1,0 +1,14 @@
+prefix=/home/kalu/Downloads/ffmpeg-android/build/ffmpeg/android/armeabi-v7a
+exec_prefix=${prefix}
+libdir=/home/kalu/Downloads/ffmpeg-android/build/ffmpeg/android/armeabi-v7a/lib
+includedir=/home/kalu/Downloads/ffmpeg-android/build/ffmpeg/android/armeabi-v7a/include
+
+Name: libavcodec
+Description: FFmpeg codec library
+Version: 58.134.100
+Requires: libavutil >= 56.70.100
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lavcodec -pthread -lm -lz -lmp3lame -lm -L/Users/guaishou/Git/Github/ffmpeg-android-build/build/x264/android/arm/lib -lx264 -lm -ldl
+Libs.private: 
+Cflags: -I${includedir}
