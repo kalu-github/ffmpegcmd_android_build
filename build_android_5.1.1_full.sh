@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-export NDK=/Android/Sdk/ndk/android-ndk-r14b
+export NDK=/home/kalu/Android/Sdk/ndk/r14b
 export PREFIX=`pwd`/build
 export SONAME=libffmpegcmd.so
 

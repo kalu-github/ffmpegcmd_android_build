@@ -2,14 +2,13 @@ libavcodec/h264idct.o: libavcodec/h264idct.c libavcodec/h264idct.h \
  libavcodec/h264idct_template.c libavcodec/bit_depth_template.c \
  libavcodec/mathops.h libavutil/common.h libavutil/attributes.h \
  libavutil/macros.h libavutil/version.h libavutil/avconfig.h config.h \
- libavutil/intmath.h libavutil/arm/intmath.h libavutil/attributes.h \
- libavutil/mem.h libavutil/error.h libavutil/avutil.h libavutil/common.h \
- libavutil/rational.h libavutil/mathematics.h libavutil/intfloat.h \
- libavutil/log.h libavutil/pixfmt.h libavutil/internal.h \
- libavutil/timer.h libavutil/arm/timer.h libavutil/cpu.h libavutil/dict.h \
- libavutil/libm.h libavutil/reverse.h libavcodec/arm/mathops.h \
+ libavutil/intmath.h libavutil/mem.h libavutil/error.h libavutil/avutil.h \
+ libavutil/common.h libavutil/rational.h libavutil/mathematics.h \
+ libavutil/intfloat.h libavutil/log.h libavutil/pixfmt.h \
+ libavutil/internal.h libavutil/timer.h libavutil/aarch64/timer.h \
+ libavutil/cpu.h libavutil/dict.h libavutil/libm.h libavutil/reverse.h \
  libavcodec/rnd_avg.h libavutil/intreadwrite.h libavutil/bswap.h \
- libavutil/arm/bswap.h libavutil/arm/intreadwrite.h libavcodec/h264dec.h \
+ libavutil/aarch64/bswap.h libavutil/attributes.h libavcodec/h264dec.h \
  libavutil/buffer.h libavutil/mem_internal.h libavutil/avassert.h \
  libavutil/thread.h libavcodec/cabac.h libavcodec/error_resilience.h \
  libavcodec/avcodec.h libavutil/samplefmt.h libavutil/avutil.h \

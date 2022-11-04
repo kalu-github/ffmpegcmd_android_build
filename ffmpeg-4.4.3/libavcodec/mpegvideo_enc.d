@@ -2,14 +2,14 @@ libavcodec/mpegvideo_enc.o: libavcodec/mpegvideo_enc.c \
  libavutil/internal.h config.h libavutil/attributes.h libavutil/timer.h \
  libavutil/log.h libavutil/avutil.h libavutil/common.h libavutil/macros.h \
  libavutil/version.h libavutil/avconfig.h libavutil/intmath.h \
- libavutil/arm/intmath.h libavutil/attributes.h libavutil/mem.h \
- libavutil/error.h libavutil/internal.h libavutil/rational.h \
- libavutil/mathematics.h libavutil/intfloat.h libavutil/pixfmt.h \
- libavutil/arm/timer.h libavutil/cpu.h libavutil/dict.h libavutil/libm.h \
- libavutil/intmath.h libavutil/mathematics.h libavutil/mem_internal.h \
- libavutil/avassert.h libavutil/pixdesc.h libavutil/opt.h \
- libavutil/samplefmt.h libavutil/thread.h libavcodec/avcodec.h \
- libavutil/samplefmt.h libavutil/avutil.h libavutil/buffer.h \
+ libavutil/mem.h libavutil/error.h libavutil/internal.h \
+ libavutil/rational.h libavutil/mathematics.h libavutil/intfloat.h \
+ libavutil/pixfmt.h libavutil/aarch64/timer.h libavutil/cpu.h \
+ libavutil/dict.h libavutil/libm.h libavutil/intmath.h \
+ libavutil/mathematics.h libavutil/mem_internal.h libavutil/avassert.h \
+ libavutil/pixdesc.h libavutil/opt.h libavutil/samplefmt.h \
+ libavutil/thread.h libavcodec/avcodec.h libavutil/samplefmt.h \
+ libavutil/attributes.h libavutil/avutil.h libavutil/buffer.h \
  libavutil/cpu.h libavutil/channel_layout.h libavutil/dict.h \
  libavutil/frame.h libavutil/buffer.h libavutil/hwcontext.h \
  libavutil/frame.h libavutil/log.h libavutil/pixfmt.h \
@@ -22,12 +22,11 @@ libavcodec/mpegvideo_enc.o: libavcodec/mpegvideo_enc.c \
  libavcodec/vlc.h libavcodec/mpegvideo.h libavcodec/blockdsp.h \
  libavcodec/error_resilience.h libavcodec/me_cmp.h libavcodec/thread.h \
  libavcodec/fdctdsp.h libavcodec/get_bits.h libavutil/common.h \
- libavutil/intreadwrite.h libavutil/bswap.h libavutil/arm/bswap.h \
- libavutil/arm/intreadwrite.h libavutil/avassert.h libavcodec/mathops.h \
- libavutil/reverse.h libavcodec/arm/mathops.h libavcodec/h264chroma.h \
- libavcodec/h263dsp.h libavcodec/hpeldsp.h libavcodec/internal.h \
- libavutil/fifo.h libavcodec/motion_est.h libavcodec/qpeldsp.h \
- libavcodec/mpegpicture.h libavcodec/mpegvideodsp.h \
+ libavutil/intreadwrite.h libavutil/bswap.h libavutil/aarch64/bswap.h \
+ libavutil/avassert.h libavcodec/mathops.h libavutil/reverse.h \
+ libavcodec/h264chroma.h libavcodec/h263dsp.h libavcodec/hpeldsp.h \
+ libavcodec/internal.h libavutil/fifo.h libavcodec/motion_est.h \
+ libavcodec/qpeldsp.h libavcodec/mpegpicture.h libavcodec/mpegvideodsp.h \
  libavcodec/mpegvideoencdsp.h libavcodec/mpegvideodata.h \
  libavcodec/pixblockdsp.h libavcodec/put_bits.h libavcodec/ratecontrol.h \
  libavutil/eval.h libavcodec/parser.h libavcodec/mpegutils.h \

@@ -63,8 +63,8 @@ function build_ARMv7() {
   echo SO-Dir=${temp_prefix}/${SONAME}
 }
 
-export PKG_CONFIG_PATH=/home/kalu/Downloads/ffmpeg-android/build/x264/android/arm/lib/pkgconfig
-export PKG_CONFIG_LIBDIR=/home/kalu/Downloads/ffmpeg-android/build/x264/android/arm/lib/pkgconfig
+export PKG_CONFIG_PATH=${PREFIX}/x264/android/arm/lib/pkgconfig
+export PKG_CONFIG_LIBDIR=${PREFIX}/x264/android/arm/lib/pkgconfig
 #exec /usr/bin/pkg-config "$@"
 build_ARMv7
 

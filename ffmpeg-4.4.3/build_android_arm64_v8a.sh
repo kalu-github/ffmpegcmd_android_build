@@ -48,10 +48,13 @@ function build_arm64
    -shared -o $temp_prefix/${SONAME} \
    -Wl,--whole-archive \
    libavcodec/libavcodec.a \
+   libavdevice/libavdevice.a \
    libavfilter/libavfilter.a \
+   libavresample/libavresample.a \
    libswresample/libswresample.a \
    libavformat/libavformat.a \
    libavutil/libavutil.a \
+   libpostproc/libpostproc.a \
    libswscale/libswscale.a \
    ${PREFIX}/x264/android/arm64/lib/libx264.a \
    ${PREFIX}/mp3lame/local/arm64-v8a/libmp3lame.a \
@@ -64,6 +67,9 @@ function build_arm64
     echo SO-Dir=${temp_prefix}/${SONAME}
 }
 
+export PKG_CONFIG_PATH=${PREFIX}/x264/android/arm/lib/pkgconfig
+export PKG_CONFIG_LIBDIR=${PREFIX}/x264/android/arm/lib/pkgconfig
+#exec /usr/bin/pkg-config "$@"
 build_arm64
 
 cp config.h $temp_prefix/config.h

@@ -1,13 +1,15 @@
 #!/bin/bash
-NDK=/Users/yesimroy/Library/Android/sdk/ndk-bundle
+
 PLATFORM=$NDK/platforms/android-21/arch-x86_64/
 TOOLCHAIN=$NDK/toolchains/x86_64-4.9/prebuilt/linux-x86_64
-PREFIX=./android/x86_64
+
+temp_prefix=${PREFIX}/x264/android/x84_64
+rm -rf $temp_prefix
 
 function build_one
 {
   ./configure \
-  --prefix=$PREFIX \
+  --prefix=${temp_prefix} \
   --enable-static \
   --enable-pic \
   --host=x86_64-linux \

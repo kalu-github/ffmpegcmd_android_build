@@ -1,9 +1,24 @@
 #
 #### 编译方法
 ```
+1. 下载 git、yasm
 1. apt-get update、apt-get install git、apt-get install yasm
-2. ./configure
-3. ./*.sh
+```
+```
+2. lame build
+./build_lame.sh
+```
+```
+3. x264 build
+./build_x264.sh
+```
+```
+4. ffmpeg comfigure
+./configure
+```
+```
+5. ffmpeg build
+./*.sh
 ```
 
 #

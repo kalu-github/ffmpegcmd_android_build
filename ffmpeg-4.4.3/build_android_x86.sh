@@ -2,48 +2,76 @@
 #Change NDK to your Android NDK location
 PLATFORM=$NDK/platforms/android-18/arch-x86/
 PREBUILT=$NDK/toolchains/x86-4.9/prebuilt/linux-x86_64
-PATH_X264=../x264
 
 
 GENERAL="\
 --enable-small \
 --enable-cross-compile \
 --extra-libs="-lgcc" \
+--arch=x86 \
 --cc=$PREBUILT/bin/i686-linux-android-gcc \
 --cross-prefix=$PREBUILT/bin/i686-linux-android- \
 --nm=$PREBUILT/bin/i686-linux-android-nm \
---extra-cflags="-I../x264/android/x86/include" \
---extra-ldflags="-L../x264/android/x86/lib""
+--extra-cflags="-I${PREFIX}/x264/android/x86/include" \
+--extra-ldflags="-L${PREFIX}/x264/android/x86/lib" \
+--extra-cflags="-I${PREFIX}/../mp3lame/include" \
+--extra-ldflags="-L${PREFIX}/mp3lame/local/x86" "
 
-MODULES="\
---enable-gpl \
---enable-libx264"
+
+temp_prefix=${PREFIX}/ffmpeg/android/x86
+rm -rf $temp_prefix
+export PATH=$PREBUILT/bin/:$PATH/
 
 
 function build_x86
 {
   ./configure \
+  --pkg-config="pkg-config --static" \
   --logfile=conflog.txt \
-  --target-os=linux \
-  --prefix=./android/x86 \
-  --arch=x86 \
+  --target-os=android \
+  --prefix=${temp_prefix} \
   ${GENERAL} \
   --sysroot=$PLATFORM \
-  --extra-cflags=" -O3 -DANDROID -Dipv6mr_interface=ipv6mr_ifindex -fasm -Wno-psabi -fno-short-enums -fno-strict-aliasing -fomit-frame-pointer -march=k8" \
-  --enable-shared \
-  --disable-static \
-  --extra-cflags="-march=i686 -mtune=intel -mssse3 -mfpmath=sse -m32" \
-  --extra-ldflags="-lx264 -Wl,-rpath-link=$PLATFORM/usr/lib -L$PLATFORM/usr/lib -nostdlib -lc -lm -ldl -llog" \
-  --enable-zlib \
-  --disable-doc \
-  ${MODULES}
+  --extra-cflags="" \
+  --extra-ldflags="-lx264 -Wl,-rpath-link=$PLATFORM/usr/lib -L$PLATFORM/usr/li
+ -nostdlib -lc -lm -ldl -llog" \
+  ${COMMON_SET}
+
 
   make clean
-  make
+  make -j10
   make install
+
+   i686-linux-android-gcc \
+   --sysroot=$PLATFORM \
+   -L$temp_prefix/lib \
+   -shared -o $temp_prefix/${SONAME} \
+   -Wl,--whole-archive \
+   libavcodec/libavcodec.a \
+   libavdevice/libavdevice.a \
+   libavfilter/libavfilter.a \
+   libavresample/libavresample.a \
+   libswresample/libswresample.a \
+   libavformat/libavformat.a \
+   libavutil/libavutil.a \
+   libpostproc/libpostproc.a \
+   libswscale/libswscale.a \
+   ${PREFIX}/x264/android/x86/lib/libx264.a \
+   ${PREFIX}/mp3lame/local/x86/libmp3lame.a \
+   -Wl,--no-whole-archive -lm -lz
+
+
+    cp $temp_prefix/${SONAME} $temp_prefix/libffmpeg-debug.so
+    i686-linux-android-strip --strip-unneeded $temp_prefix/${SONAME}
+
+    echo SO-Dir=${temp_prefix}/${SONAME}
 }
 
+export PKG_CONFIG_PATH=${PREFIX}/x264/android/x86/lib/pkgconfig
+export PKG_CONFIG_LIBDIR=${PREFIX}/x264/android/x86/lib/pkgconfig
+#exec /usr/bin/pkg-config "$@"
 build_x86
 
+cp config.h $temp_prefix/config.h
 
-echo Android X86 builds finished
+echo Android x86 builds finished

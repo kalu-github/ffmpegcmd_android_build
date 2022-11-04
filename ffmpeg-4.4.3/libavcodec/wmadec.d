@@ -3,9 +3,9 @@ libavcodec/wmadec.o: libavcodec/wmadec.c libavutil/attributes.h \
  libavutil/intfloat.h libavutil/mathematics.h libavutil/rational.h \
  libavcodec/avcodec.h libavutil/samplefmt.h libavutil/avutil.h \
  libavutil/common.h libavutil/macros.h libavutil/version.h \
- libavutil/avconfig.h libavutil/intmath.h libavutil/arm/intmath.h \
- libavutil/mem.h libavutil/error.h libavutil/internal.h libavutil/timer.h \
- libavutil/log.h libavutil/arm/timer.h libavutil/cpu.h libavutil/dict.h \
+ libavutil/avconfig.h libavutil/intmath.h libavutil/mem.h \
+ libavutil/error.h libavutil/internal.h libavutil/timer.h libavutil/log.h \
+ libavutil/aarch64/timer.h libavutil/cpu.h libavutil/dict.h \
  libavutil/pixfmt.h libavutil/avutil.h libavutil/buffer.h libavutil/cpu.h \
  libavutil/channel_layout.h libavutil/dict.h libavutil/frame.h \
  libavutil/buffer.h libavutil/samplefmt.h libavutil/hwcontext.h \
@@ -18,6 +18,5 @@ libavcodec/wmadec.o: libavcodec/wmadec.c libavutil/attributes.h \
  libavutil/float_dsp.h libavutil/mem_internal.h libavutil/avassert.h \
  libavcodec/fft.h libavcodec/avfft.h libavcodec/get_bits.h \
  libavutil/common.h libavutil/intreadwrite.h libavutil/bswap.h \
- libavutil/arm/bswap.h libavutil/arm/intreadwrite.h libavutil/avassert.h \
- libavcodec/mathops.h libavutil/reverse.h libavcodec/arm/mathops.h \
- libavcodec/vlc.h libavcodec/put_bits.h
+ libavutil/aarch64/bswap.h libavutil/avassert.h libavcodec/mathops.h \
+ libavutil/reverse.h libavcodec/vlc.h libavcodec/put_bits.h

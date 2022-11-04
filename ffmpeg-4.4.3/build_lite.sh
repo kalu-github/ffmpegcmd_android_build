@@ -7,14 +7,15 @@ export COMMON_SET="--enable-static \
   --disable-symver \
   --disable-network \
   --disable-debug \
+  --disable-programs \
+  --disable-ffmpeg \
+  --disable-ffplay \
+  --disable-ffprobe \
   --disable-doc \
   --disable-htmlpages \
   --disable-manpages \
   --disable-podpages \
   --disable-txtpages \
-  --disable-ffplay \
-  --disable-ffmpeg \
-  --disable-ffprobe \
   --enable-avdevice \
   --enable-avcodec \
   --enable-avformat \
@@ -142,14 +143,14 @@ export COMMON_SET="--enable-static \
 
 # Build arm v7a
 #make distclean
-./build_android_armeabi_v7a.sh
+# ./build_android_armeabi_v7a.sh
 
 # Build arm64 v8a
 #make distclean
 # ./build_android_arm64_v8a.sh
 
 # Build x86
-# ./build_android_x86.sh
+./build_android_x86.sh
 
 # Build x86_64
 # ./build_android_x86_64.sh

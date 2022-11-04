@@ -1,13 +1,15 @@
 #!/bin/bash
-NDK=/Android/Sdk/ndk/android-ndk-r14b
+
 PLATFORM=$NDK/platforms/android-18/arch-x86/
 TOOLCHAIN=$NDK/toolchains/x86-4.9/prebuilt/linux-x86_64
-PREFIX=./android/x86
+
+temp_prefix=${PREFIX}/x264/android/x86
+rm -rf $temp_prefix
 
 function build_one
 {
   ./configure \
-  --prefix=$PREFIX \
+  --prefix=${temp_prefix} \
   --enable-static \
   --enable-pic \
   --host=i686-linux \

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PLATFORM=$NDK/platforms/android-16/arch-arm
-TOOLCHAIN=$NDK/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64
+PLATFORM=${NDK}/platforms/android-16/arch-arm
+TOOLCHAIN=${NDK}/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64
 
 temp_prefix=${PREFIX}/x264/android/arm
 rm -rf $temp_prefix
